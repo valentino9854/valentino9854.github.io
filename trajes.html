@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trajes | League of Legends</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="shortcut icon" href="imagenes/LOL_Logo.webp" type="image/x-icon">
+</head>
+<body>
+    <div id="container">
+        <audio src="audio/the_mountain-storytelling-audio-136105.mp3" autoplay loop></audio>
+        <div id="principal">
+            <header>
+                <h1>LEAGUE OF LEGENDS</h1>
+                <nav class="menu">
+                    <ul class="web">
+                        <li><a href="index.html">INICIO</a></li>
+                        <li><a href="nosotros.html">NOSOTROS</a></li>
+                        <li><a href="blog.html">BLOG</a></li>
+                        <li><a href="galeria.html">GALERIA</a></li>
+                        <li><a href="video.html">VIDEOS</a></li>
+                        <li><a href="trajes.html">TRAJES</a></li>
+                        <li><a href="actualizaciones.html">ACTULIZACION</a></li>
+                        <li><a href="contacto.html">CONTACTO</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <section class="promo-trajes">
+                <h1>¡NUEVOS TRAJES DISPONIBLES!</h1>
+                <p>Personaliza a tus campeones favoritos con los trajes más épicos de la temporada. Haz clic en cualquiera de ellos para ver los detalles.</p>
+            </section>
+
+            <section class="seccion-trajes">
+                <div class="grid-trajes" id="grid-trajes">
+                    <!-- Las tarjetas de trajes se generan con JavaScript -->
+                </div>
+            </section>
+
+            <footer>
+                <nav class="menu">
+                    <ul class="redes">
+                        <li><a href="https://x.com/lollatam"><i class="fa-brands fa-x-twitter"></i></a></li>
+                        <li><a href="https://www.facebook.com/leagueoflegends/?locale=es_LA"><i class="fa-brands fa-square-facebook"></i></a></li>
+                        <li><a href="https://www.instagram.com/leagueoflegends/?hl=es"><i class="fa-brands fa-square-instagram"></i></a></li>
+                        <li><a href="https://www.tiktok.com/@leagueoflegends?lang=es-419"><i class="fa-brands fa-tiktok"></i></a></li>
+                    </ul>
+                </nav>
+            </footer>
+        </div>
+    </div>
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        const trajes = [
+            {
+                campeon: "Teemo",
+                nombre: "Traje Explorador Astral",
+                imagen: "imagenes/campeon1.jpg",
+                precio: "1350 RP",
+                nuevo: true,
+                descripcion: "Un Teemo salido de las estrellas, con partículas cósmicas en sus habilidades y una nueva animación de recall espacial."
+            },
+            {
+                campeon: "Talon",
+                nombre: "Traje Asesino Carmesí",
+                imagen: "imagenes/campeon2.jpg",
+                precio: "1820 RP",
+                nuevo: false,
+                descripcion: "Talon se convierte en un asesino de la noche envuelto en niebla carmesí, con efectos de sonido renovados en su ultimate."
+            },
+            {
+                campeon: "Yuumi",
+                nombre: "Traje Gatita Estelar",
+                imagen: "imagenes/campeon3.jpg",
+                precio: "1350 RP",
+                nuevo: true,
+                descripcion: "Yuumi brilla como una estrella fugaz, dejando una estela luminosa cada vez que salta hacia su aliado."
+            },
+            {
+                campeon: "Warwick",
+                nombre: "Traje Cazador de las Sombras",
+                imagen: "imagenes/campeon4.jpg",
+                precio: "1820 RP",
+                nuevo: false,
+                descripcion: "Un Warwick oscurecido por las sombras del bosque, con ojos brillantes que se intensifican al detectar sangre enemiga."
+            },
+            {
+                campeon: "Fizz",
+                nombre: "Traje Pescador Dorado",
+                imagen: "imagenes/campeon5.jpg",
+                precio: "975 RP",
+                nuevo: false,
+                descripcion: "Fizz pesca fortuna con su tridente dorado, dejando destellos marinos al usar su travesura submarina."
+            },
+            {
+                campeon: "Brand",
+                nombre: "Traje Furia Ancestral",
+                imagen: "imagenes/campeon6.jpg",
+                precio: "1350 RP",
+                nuevo: true,
+                descripcion: "Brand arde con fuego ancestral tallado en piedra rúnica, incendiando el campo de batalla con cada hechizo."
+            }
+        ];
+
+        const contenedor = document.getElementById("grid-trajes");
+
+        trajes.forEach((traje) => {
+            const card = document.createElement("div");
+            card.className = "traje-card";
+            card.innerHTML = `
+                ${traje.nuevo ? '<span class="badge-nuevo">NUEVO</span>' : ""}
+                <div class="traje-img-wrap">
+                    <img src="${traje.imagen}" alt="${traje.nombre}">
+                </div>
+                <div class="traje-info">
+                    <h3>${traje.nombre}</h3>
+                    <span>${traje.campeon} · ${traje.precio}</span>
+                </div>
+            `;
+
+            card.addEventListener("click", () => {
+                Swal.fire({
+                    title: traje.nombre,
+                    imageUrl: traje.imagen,
+                    imageWidth: 260,
+                    imageAlt: traje.nombre,
+                    html: `<p class="swal-texto-lol">${traje.descripcion}</p>
+                           <p class="swal-texto-lol"><strong>Campeón:</strong> ${traje.campeon}<br>
+                           <strong>Precio:</strong> ${traje.precio}</p>`,
+                    confirmButtonText: "¡Lo quiero!",
+                    buttonsStyling: false,
+                    background: "#10141c",
+                    customClass: {
+                        popup: "swal-popup-lol",
+                        title: "swal-title-lol",
+                        confirmButton: "swal-confirm-lol"
+                    }
+                });
+            });
+
+            contenedor.appendChild(card);
+        });
+    </script>
+</body>
+</html>

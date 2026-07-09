@@ -374,3 +374,390 @@ section{
         height: auto;
     }
 }
+
+/* =========================================================
+   HERO NOSOTROS - imagen de fondo con texto resaltado
+   ========================================================= */
+.hero-nosotros{
+    width: 100%;
+    height: 320px;
+    margin-top: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: linear-gradient(rgba(5,7,12,0.55),rgba(5,7,12,0.55)), url(imagenes/fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-nosotros .hero-texto h2{
+    color: #ffffff;
+    font-size: 3em;
+    letter-spacing: 4px;
+    text-shadow: 0 0 10px rgba(0,0,0,0.9), 0 0 25px rgba(200,170,110,0.6);
+    -webkit-text-stroke: 1px #10244d;
+    margin: 0;
+}
+
+.hero-nosotros .hero-texto p{
+    color: #f0e6d2;
+    font-size: 1.1em;
+    margin-top: 10px;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.9);
+    letter-spacing: 1px;
+}
+
+section#nosotros{
+    margin-top: 30px;
+}
+
+#nosotros h2{
+    background: linear-gradient(90deg,#10244d,#1b3a75);
+    border-left: 6px solid #c8aa6e;
+}
+
+.texto-nosotros p{
+    margin-bottom: 12px;
+}
+
+.imagen-lateral img{
+    border-radius: 6px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* =========================================================
+   CONTACTO - mejoras visuales y responsividad
+   ========================================================= */
+#contacto{
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    border-top: 4px solid #c8aa6e;
+}
+
+.contacto-contenedor{
+    flex-wrap: wrap;
+}
+
+.info, .formulario{
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.info th{
+    background-color: #8b4d15;
+    color: #fff;
+}
+
+.formulario input:focus,
+.formulario textarea:focus{
+    outline: none;
+    border-color: #8b4d15;
+    box-shadow: 0 0 5px rgba(139,77,21,0.5);
+}
+
+.formulario button{
+    background-color: #8b4d15;
+    transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.formulario button:hover{
+    background-color: #63350c;
+    transform: translateY(-2px);
+}
+
+.mapa iframe{
+    border-radius: 6px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+@media(max-width:768px){
+    .contacto-contenedor{
+        flex-direction: column;
+    }
+    .info, .formulario{
+        width: 100%;
+    }
+    .hero-nosotros{
+        height: 260px;
+    }
+    .hero-nosotros .hero-texto h2{
+        font-size: 2em;
+    }
+}
+
+/* =========================================================
+   TRAJES - promo de skins con animaciones
+   ========================================================= */
+.promo-trajes{
+    margin-top: 150px;
+    padding: 40px 10%;
+    text-align: center;
+    background: linear-gradient(-45deg,#0b0f1a,#10244d,#1b3a75,#0b0f1a);
+    background-size: 400% 400%;
+    animation: gradienteFondo 12s ease infinite;
+}
+
+@keyframes gradienteFondo{
+    0%{ background-position: 0% 50%; }
+    50%{ background-position: 100% 50%; }
+    100%{ background-position: 0% 50%; }
+}
+
+.promo-trajes h1{
+    color: #f0e6d2;
+    font-size: 2.6em;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg,#c8aa6e,#f0e6d2,#c8aa6e);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: brilloTexto 3s linear infinite;
+}
+
+@keyframes brilloTexto{
+    0%{ background-position: 0% center; }
+    100%{ background-position: 200% center; }
+}
+
+.promo-trajes p{
+    color: #cfd6e6;
+    font-size: 1.1em;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.seccion-trajes{
+    padding: 50px 8%;
+    background-color: #0e1420;
+}
+
+.grid-trajes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 35px;
+}
+
+.traje-card{
+    position: relative;
+    width: 260px;
+    background: #161d2e;
+    border: 1px solid #c8aa6e;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    animation: flotar 4s ease-in-out infinite;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.traje-card:nth-child(2){ animation-delay: 0.5s; }
+.traje-card:nth-child(3){ animation-delay: 1s; }
+.traje-card:nth-child(4){ animation-delay: 1.5s; }
+.traje-card:nth-child(5){ animation-delay: 2s; }
+.traje-card:nth-child(6){ animation-delay: 2.5s; }
+
+@keyframes flotar{
+    0%, 100%{ transform: translateY(0px); }
+    50%{ transform: translateY(-10px); }
+}
+
+.traje-card:hover{
+    transform: scale(1.06) translateY(-10px);
+    box-shadow: 0 10px 25px rgba(200,170,110,0.5);
+}
+
+.traje-card .badge-nuevo{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #c8aa6e;
+    color: #10244d;
+    font-size: 0.7em;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 20px;
+    z-index: 2;
+    animation: pulso 1.6s ease-in-out infinite;
+}
+
+@keyframes pulso{
+    0%{ box-shadow: 0 0 0 0 rgba(200,170,110,0.7); }
+    70%{ box-shadow: 0 0 0 10px rgba(200,170,110,0); }
+    100%{ box-shadow: 0 0 0 0 rgba(200,170,110,0); }
+}
+
+.traje-card .traje-img-wrap{
+    position: relative;
+    overflow: hidden;
+    height: 170px;
+}
+
+.traje-card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.traje-card:hover img{
+    transform: scale(1.15);
+}
+
+.traje-card .traje-img-wrap::after{
+    content:"";
+    position: absolute;
+    top:0;
+    left:-75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.35) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-20deg);
+    animation: brilloCard 3.5s ease-in-out infinite;
+}
+
+@keyframes brilloCard{
+    0%{ left: -75%; }
+    50%{ left: 125%; }
+    100%{ left: 125%; }
+}
+
+.traje-card .traje-info{
+    padding: 14px 10px 18px;
+}
+
+.traje-card h3{
+    color: #f0e6d2;
+    font-size: 1.1em;
+    margin-bottom: 4px;
+}
+
+.traje-card span{
+    color: #c8aa6e;
+    font-size: 0.9em;
+}
+
+/* Ventanas SweetAlert2 con tema LoL */
+.swal-popup-lol{
+    background: #10141c !important;
+    border: 2px solid #c8aa6e !important;
+    border-radius: 10px !important;
+}
+
+.swal-title-lol{
+    color: #f0e6d2 !important;
+    letter-spacing: 1px;
+}
+
+.swal-texto-lol{
+    color: #cfd6e6 !important;
+}
+
+.swal-confirm-lol{
+    background-color: #c8aa6e !important;
+    color: #10244d !important;
+    font-weight: bold;
+    border-radius: 6px !important;
+    padding: 10px 25px !important;
+    box-shadow: none !important;
+}
+
+.swal-confirm-lol:hover{
+    background-color: #f0e6d2 !important;
+}
+
+@media(max-width:768px){
+    .promo-trajes h1{ font-size: 1.8em; }
+    .traje-card{ width: 100%; max-width: 300px; }
+}
+
+/* =========================================================
+   ACTUALIZACIONES - carrusel y grilla bootstrap
+   ========================================================= */
+.actualizaciones-wrap{
+    margin-top: 150px;
+    padding-bottom: 50px;
+    background-color: #f4f1ea;
+}
+
+.carrusel-actualizaciones{
+    max-height: 480px;
+    overflow: hidden;
+}
+
+.carrusel-actualizaciones .carousel-item img{
+    height: 480px;
+    object-fit: cover;
+    filter: brightness(0.75);
+}
+
+.carrusel-actualizaciones .carousel-caption h3{
+    font-weight: bold;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+}
+
+.carrusel-actualizaciones .carousel-caption p{
+    text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+}
+
+.titulo-actualizado{
+    text-align: center;
+    margin: 45px 0 35px;
+    color: #10244d;
+    font-weight: bold;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.titulo-actualizado::after{
+    content:"";
+    display:block;
+    width: 90px;
+    height: 4px;
+    background: #c8aa6e;
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+.tarjeta-actualizacion{
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+    height: 100%;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tarjeta-actualizacion:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.tarjeta-actualizacion img{
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+}
+
+.tarjeta-actualizacion .cuerpo{
+    padding: 14px;
+}
+
+.tarjeta-actualizacion h5{
+    color: #10244d;
+    font-size: 1.05em;
+    margin-bottom: 8px;
+}
+
+.tarjeta-actualizacion p{
+    color: #555;
+    font-size: 0.9em;
+    margin: 0;
+}

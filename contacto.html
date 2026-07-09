@@ -3,127 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
-</head>
-<body>
-<!DOCTYPE html>
-
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto | League of Legends</title>
     <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="shortcut icon" href="imagenes/LOL_Logo.webp" type="image/x-icon">
 </head>
-
 <body>
+    <div id="container">
+        <audio src="audio/the_mountain-storytelling-audio-136105.mp3" autoplay loop></audio>
+        <div id="principal">
+            <header>
+                <h1>LEAGUE OF LEGENDS</h1>
+                <nav class="menu">
+                    <ul class="web">
+                        <li><a href="index.html">INICIO</a></li>
+                        <li><a href="nosotros.html">NOSOTROS</a></li>
+                        <li><a href="blog.html">BLOG</a></li>
+                        <li><a href="galeria.html">GALERIA</a></li>
+                        <li><a href="video.html">VIDEOS</a></li>
+                        <li><a href="trajes.html">TRAJES</a></li>
+                        <li><a href="actualizaciones.html">ACTULIZACION</a></li>
+                        <li><a href="contacto.html">CONTACTO</a></li>
+                    </ul>
+                </nav>
+            </header>
 
-```
-<header>
-    <h1>League of Legends</h1>
+            <main>
 
-    <nav>
-        <a href="index.html">Inicio</a>
-        <a href="nosotros.html">Nosotros</a>
-        <a href="blog.html">Blog</a>
-        <a href="galeria.html">Galería</a>
-        <a href="video.html">Videos</a>
-        <a href="contacto.html">Contacto</a>
-    </nav>
-</header>
+                <section id="contacto">
 
-<main>
+                    <div class="contacto-contenedor">
 
-    <section id="contacto">
+                        <!-- Información -->
+                        <article class="info">
 
-        <div class="contacto-contenedor">
+                            <h2>Información de Contacto</h2>
 
-            <!-- Información -->
-            <article class="info">
+                            <table>
+                                <tr>
+                                    <th>Dirección</th>
+                                    <td>Av. Summoner's Rift 123 - Lima, Perú</td>
+                                </tr>
 
-                <h2>Información de Contacto</h2>
+                                <tr>
+                                    <th>Teléfono</th>
+                                    <td>999 999 999</td>
+                                </tr>
 
-                <table>
-                    <tr>
-                        <th>Dirección</th>
-                        <td>Av. Summoner's Rift 123 - Lima, Perú</td>
-                    </tr>
+                                <tr>
+                                    <th>Correo</th>
+                                    <td>contacto@leagueweb.com</td>
+                                </tr>
 
-                    <tr>
-                        <th>Teléfono</th>
-                        <td>999 999 999</td>
-                    </tr>
+                                <tr>
+                                    <th>Horario</th>
+                                    <td>Lunes a Viernes de 8:00 am a 6:00 pm</td>
+                                </tr>
+                            </table>
 
-                    <tr>
-                        <th>Correo</th>
-                        <td>contacto@leagueweb.com</td>
-                    </tr>
+                            <figure>
+                                <img src="imagenes/League_of_legends_logo_transparent.webp" alt="Atención al cliente">
+                                <figcaption>Atención a la comunidad de jugadores.</figcaption>
+                            </figure>
 
-                    <tr>
-                        <th>Horario</th>
-                        <td>Lunes a Viernes de 8:00 am a 6:00 pm</td>
-                    </tr>
-                </table>
+                        </article>
 
-                <figure>
-                    <img src="imagenes/contacto.jpg" alt="Atención al cliente">
-                    <figcaption>Atención a la comunidad de jugadores.</figcaption>
-                </figure>
+                        <!-- Formulario -->
+                        <article class="formulario">
 
-            </article>
+                            <h2>Déjanos tu Comentario</h2>
 
-            <!-- Formulario -->
-            <article class="formulario">
+                            <form action="#" method="post">
 
-                <h2>Déjanos tu Comentario</h2>
+                                <label for="nombre">Nombre</label>
+                                <input type="text" id="nombre" name="nombre" required>
 
-                <form action="#" method="post">
+                                <label for="correo">Correo Electrónico</label>
+                                <input type="email" id="correo" name="correo" required>
 
-                    <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" name="nombre" required>
+                                <label for="asunto">Asunto</label>
+                                <input type="text" id="asunto" name="asunto">
 
-                    <label for="correo">Correo Electrónico</label>
-                    <input type="email" id="correo" name="correo" required>
+                                <label for="mensaje">Mensaje</label>
+                                <textarea id="mensaje" name="mensaje" rows="6" required></textarea>
 
-                    <label for="asunto">Asunto</label>
-                    <input type="text" id="asunto" name="asunto">
+                                <button type="submit">ENVIAR</button>
 
-                    <label for="mensaje">Mensaje</label>
-                    <textarea id="mensaje" name="mensaje" rows="6" required></textarea>
+                            </form>
 
-                    <button type="submit">ENVIAR</button>
+                        </article>
 
-                </form>
+                    </div>
 
-            </article>
+                    <!-- Mapa -->
+                    <section class="mapa">
 
+                        <h2>Ubicación</h2>
+
+                        <iframe
+                            src="https://maps.google.com/maps?q=lima&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                            loading="lazy">
+                        </iframe>
+
+                    </section>
+
+                </section>
+
+            </main>
+
+            <footer>
+                <nav class="menu">
+                    <ul class="redes">
+                        <li><a href="https://x.com/lollatam"><i class="fa-brands fa-x-twitter"></i></a></li>
+                        <li><a href="https://www.facebook.com/leagueoflegends/?locale=es_LA"><i class="fa-brands fa-square-facebook"></i></a></li>
+                        <li><a href="https://www.instagram.com/leagueoflegends/?hl=es"><i class="fa-brands fa-square-instagram"></i></a></li>
+                        <li><a href="https://www.tiktok.com/@leagueoflegends?lang=es-419"><i class="fa-brands fa-tiktok"></i></a></li>
+                    </ul>
+                </nav>
+                <p style="text-align:center; color:#8b4d15; margin-top:10px;">&copy; 2026 - League of Legends Web</p>
+            </footer>
         </div>
-
-        <!-- Mapa -->
-        <section class="mapa">
-
-            <h2>Ubicación</h2>
-
-            <iframe
-                src="https://maps.google.com/maps?q=lima&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                loading="lazy">
-            </iframe>
-
-        </section>
-
-    </section>
-
-</main>
-
-<footer>
-    <p>&copy; 2026 - League of Legends Web</p>
-</footer>
-```
-
-</body>
-
-</html>
-
+    </div>
 </body>
 </html>
